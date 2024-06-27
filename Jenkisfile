@@ -1,0 +1,30 @@
+pipeline {
+    agent any   
+    stages {
+        stage('Initialize') {
+            steps {
+                echo 'Iniciando o pipeline...'
+            }
+        }
+
+        stage('Process') {
+            steps {
+                echo 'Processando dados...'
+               
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Este bloco sempre será executado ao final do pipeline.'
+        }
+        success {
+            echo 'Pipeline concluído com SUCESSO!'
+        }
+        failure {
+            echo 'Falha ao executar o pipeline.'
+        }
+        
+    }
+}
