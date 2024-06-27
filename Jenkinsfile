@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     environment {
+		GITHUB_TOKEN= credentials('github-pat')
         MAVEN_OPTS = '-Dmaven.test.failure.ignore=true'
     }
 
